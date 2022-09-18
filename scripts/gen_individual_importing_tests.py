@@ -33,7 +33,11 @@ for module_name in module_names:
         if ((not is_gtk) or (ver == 2 and (not IS_MAC) and (not SKIP_GTK))):
             def fmt(s):
                 return s % {'module_name': module_name, 'ver': ver}
-            open(os.path.join(".", "tests", "individually-importing", fmt("import_v%(ver)d_%(module_name)s.py")), 'w').write(fmt('''#!/usr/bin/env python%(ver)d
+            base_name = fmt("import_v%(ver)d_%(module_name)s.py")
+            dir_name = os.path.join(".", "tests", "individually-importing")
+            full_name = os.path.join(dir_name, base_name)
+            fh = open(full_name, 'w')
+            fh.write(fmt('''#!/usr/bin/env python%(ver)d
 import sys
 print('1..1')
 sys.path.insert(0, ".")
