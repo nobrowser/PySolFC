@@ -7,8 +7,14 @@ license = "GPL-3"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+pysol-cards = "^0.14.2"
+attrs = "^22.1.0"
+configobj = "^5.0.6"
+six = "^1.16.0"
 
 [tool.poetry.dev-dependencies]
+pycotap = "^1.2.2"
+flake8 = "^5.0.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
